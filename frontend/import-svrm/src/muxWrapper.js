@@ -1,18 +1,43 @@
 import config from "./config"
-var upload = function (input_path, playback_policy, username, password) {
+var getAccessInfo = function (asset_id) {
 
-    var asset_id = "00401k8pUJIopNaUyT5024tPhw8mEstyv5A"
-    fetch("https://api.mux.com/video/v1/assets/"+ asset_id, {
+    return fetch("https://api.mux.com/video/v1/assets/"+ asset_id, {
         headers: {
-            Authorization: config.muxWrapper,
+            "Authorization": config.muxWrapper.auth_header,
             "Content-Type": "application/json"
         },
         method: "GET"
     }).then((response) => { return response.json() })
 }
 
+var getUploadLink = function () {
+    return fetch("https://api.mux.com/video/v1/uploads", {
+        body: "{\"cors_origin\": \"*\", \"new_asset_settings\": { \"playback_policy\": [\"public\"] } }",
+        headers: {
+            "Authorization": config.muxWrapper.auth_header,
+            "Content-Type": "application/json"
+        },
+        method: "POST"
+    }).then((response) => { return response.json() })
+}
+
+var getAccessfromUpload = function (upload_link) {
+    return fetch("https://api.mux.com/video/v1/uploads/"+ upload_link, {
+        headers: {
+            "Authorization": config.muxWrapper.auth_header,
+            "Content-Type": "application/json"
+        },
+        method: "GET"
+    })
+}
+
+
+
 var muxWrapper = {
-    upload: upload
+    getAccessInfo: getAccessInfo,
+    getUploadLink: getUploadLink,
+    getAccessfromUpload: getAccessfromUpload,
+
 };
 
 export default muxWrapper;
