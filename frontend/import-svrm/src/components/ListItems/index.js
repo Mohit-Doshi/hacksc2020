@@ -21,14 +21,14 @@ export default class ListItems extends Component {
 
     render() {
         console.log(this.state.items)
-        str = ''
-        for (const key in this.state.items) {
-            if (this.state.items.hasOwnProperty(key)) {
-                const element = this.state.items[key];
-                str = str + '<p>'+ element.uid+ '</p>' 
+        // str = ''
+        // for (const key in this.state.items) {
+        //     if (this.state.items.hasOwnProperty(key)) {
+        //         const element = this.state.items[key];
+        //         str = str + '<p>'+ element.uid+ '</p>' 
                 
-            }
-        }
+        //     }
+        // }
         return (
             <div>
                 <p>There are {Object.keys(this.state.items)} videos</p>

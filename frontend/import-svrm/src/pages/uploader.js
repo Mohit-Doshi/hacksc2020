@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Menu from 'components/Menu';
-import muxWrapper from '../muxWrapper';
-import firebaseWrapper from '../firebaseWrapper';
+import muxWrapper from '../muxWrapper'
+import firebaseWrapper from '../firebaseWrapper'
 
 ReactDOM.render(<Menu />, document.getElementById('menu'));
 
@@ -67,4 +67,3 @@ function myFunc() {
 };
 
 document.getElementById('upload').addEventListener('click',myFunc);
-
