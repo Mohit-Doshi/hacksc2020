@@ -47,16 +47,18 @@ function myFunc() {
         });
         upload.on('success', () => {
             console.log('We did it, everyone!');
+            setTimeout(() => {
             muxWrapper.getAccessfromUpload(upload_id).then(uploaddata => {
                 // console.log(uploaddata);
                 var asset_id=uploaddata['data']['asset_id'];
                 muxWrapper.getAccessInfo(asset_id).then(assetdata => {
                     console.log(assetdata);
                     var playback_id = assetdata['data']['playback_ids'][0]['id'];
-                    firebaseWrapper.createVideo(asset_id,playback_id,'I am there',location);
+                    firebaseWrapper.createVideo(asset_id,playback_id,'I am there 2',location);
                     firebaseWrapper.createMapping(uid, asset_id);
                 })
             })
+        }, 2000);
             // firebaseWrapper.createVideo()
         });
         upload.on('error', console.error)
