@@ -9,9 +9,10 @@ const auth = firebase.auth();
 var signedIn = false;
 var uid = null
 
-const createVideo = function(videoAssetId,videoPlaybackId,captions,location) {
+const createVideo = function(videoAssetId,videoPlaybackId,captions,location, userId) {
     database.ref('videos/' + videoAssetId).set({
         videoAssetId: videoAssetId,
+        userId: userId,
         videoPlaybackId: videoPlaybackId,
         captions : captions,
         location: location,
@@ -43,6 +44,10 @@ const createMapping = function(uid, videoAssetId) {
       });
 }
 
+const getMapping = function (uid,videoAssetId) {
+    return database.ref('mapping/' + uid+videoAssetId)
+}
+
 const getUser = function(uid){
     return database.ref("users/"+uid).once('value').then((snapshot)=>{ return snapshot.val() })
 }
@@ -57,6 +62,13 @@ const getVideos = function(){
 
 const getUsers = function(){
     return database.ref("users").once('value').then((snapshot) => { return snapshot.val() })
+}
+
+const updatePoints = function(userId, number) {
+    return getUser(userId).then((user) => { 
+        user['points'] = user['points'] + number 
+        return database.ref('users/'+userId).update(user);
+    })
 }
 
 
@@ -87,12 +99,17 @@ const upvote = function (videoAssetId, userId) {
             if (!alreadyVoted) {
                 data['reviewers'].push(userId)
                 data['upvotes'] = data['upvotes'] + 1
+
             } else {
                 console.warn("You can vote once")
             }
         }
-        if(data['upvotes'] >= 2 + data['downvotes']){
+        if(data['upvotes'] >= 2 + data['downvotes'] && data['display']){
             data['display'] = false
+            updatePoints(data['userId'], 10)
+            for(const r in data['reviewers']) {
+                updatePoints(data['reviewers'][r],1)
+            }
         }
         return data
     }).then(data => {
@@ -119,7 +136,7 @@ const downvote = function (videoAssetId, userId) {
                 console.warn("You can vote once")
             }
         }
-        if(data['upvotes'] + 2 <= data['downvotes']){
+        if(data['upvotes'] + 2 <= data['downvotes'] && data['display']){
             data['display'] = false
         }
         return data

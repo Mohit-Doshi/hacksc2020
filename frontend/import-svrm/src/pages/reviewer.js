@@ -6,7 +6,7 @@ import firebaseWrapper from '../firebaseWrapper';
 ReactDOM.render(<Menu />, document.getElementById('menu'));
 
 function addUpvote() {
-    var videoAssetId = "kXwOuP4ZuCtQNxNdDqXHITalNl3v3mFa"
+    var videoAssetId = "nA3Rgdf3VHqurwwl01AYRn21SmJZADHPa"
     firebaseWrapper.upvote(videoAssetId, localStorage.getItem("userid"))
 }
 
@@ -14,7 +14,7 @@ document.getElementById("upvote").addEventListener('click', addUpvote);
 
 
 function addDownvote() {
-    var videoAssetId = "kXwOuP4ZuCtQNxNdDqXHITalNl3v3mFa"
+    var videoAssetId = "nA3Rgdf3VHqurwwl01AYRn21SmJZADHPa"
     firebaseWrapper.downvote(videoAssetId, localStorage.getItem("userid"))
 }
 
