@@ -4,7 +4,10 @@ import config from "./config"
 
 firebase.initializeApp(config.firebaseConfig);
 
-var database = firebase.database();
+const database = firebase.database();
+const auth = firebase.auth();
+var signedIn = false;
+var uid = null
 
 var createVideo = function(videoAssetId,videoPlaybackId,captions,location) {
     database.ref('videos/' + videoAssetId).set({
@@ -19,10 +22,39 @@ var createVideo = function(videoAssetId,videoPlaybackId,captions,location) {
       });
 }
 
-var createUser = function(){
-
+const createUser = function(uid, email){
+    database.ref("users/" + uid).set({
+        uid: uid,
+        name: '',
+        email: email,
+        points: 0,
+        password: ''
+    })
 }
 
-export default {
-    'createVideo': createVideo
+const getUser = function(uid){
+    return database.ref("users/"+uid).once('value').then((snapshot)=>{ return snapshot.val() })
 }
+
+const getVideo = function(videoAssetId){
+    return database.ref("videos/"+videoAssetId).once('value').then((snapshot) => { return snapshot.val() })
+}
+
+const getVideos = function(){
+    return database.ref("videos").once('value').then((snapshot) => { return snapshot.val() })
+}
+
+
+const login = function(){
+    auth.signInAnonymously().then(user => { createUser(user) })
+}
+
+// const uiConfig = {
+//     // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+//     // We will display Google and Facebook as auth providers.
+//     signInOptions: [
+//       firebase.auth.EmailAuthProvider.PROVIDER_ID
+//     ]
+//   };
+
+export default { createVideo, createUser, auth, login, getUser, getVideo, getVideos}
