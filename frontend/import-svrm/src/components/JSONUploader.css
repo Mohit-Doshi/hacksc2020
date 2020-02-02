@@ -1,0 +1,26 @@
+.parentDiv {
+    align-content: center;
+    text-align: center;
+}
+
+.jsonicon {
+    width: 400px;
+}
+
+.upload {
+    border: none;
+}
+
+.jsonpicker {
+    color: tomato;
+}
+
+.fetchlink {
+    text-decoration: underline;
+    color: teal;
+    font-size: x-large;
+    text-align: center;
+}
+.fetchlink:visited{
+    color: teal;
+}
