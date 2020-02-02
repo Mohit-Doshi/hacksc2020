@@ -1,4 +1,4 @@
- @font-face {
+ /* @font-face {
    font-family: 'MenuFont';
    src:  url('./OpenSans-Regular.woff') format('woff');
 }
@@ -7,4 +7,34 @@
     color: #808080;
     font-family: 'MenuFont';
     list-style-type: square;
+} */
+
+nav {
+  background-color: bisque;
+  border-radius: 5px;
+  box-shadow: none;
+  border:0;
+}
+
+nav ul {
+  border:1px solid #ccc;
+  border-width:1px 0;
+  list-style:none;
+  margin:0;
+  padding:0;
+  text-align:center;
+}
+nav li{
+  display:inline;
+}
+nav a{
+  display:inline-block;
+  padding:25px;
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
+}
+nav a:hover {
+font-weight: bold;
+background-color: whitesmoke;
 }

@@ -11,5 +11,4 @@ const firebaseConfig = {
 const muxWrapper = {
     auth_header: ""
 }
-
-export {firebaseConfig, muxWrapper};
+export default {firebaseConfig, muxWrapper};

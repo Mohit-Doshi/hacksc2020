@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import loginContext from '../Menu';
 import firebaseWrapper from '../../firebaseWrapper';
+import './index.css'
 
 export default class SignIn extends Component {
     constructor(props){
