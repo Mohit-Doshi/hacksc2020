@@ -32,6 +32,13 @@ const createUser = function(uid, email){
     })
 }
 
+const createMapping = function(uid, videoAssetId) {
+    database.ref('mapping/' + uid + videoAssetId).set({
+        videoAssetId: videoAssetId,
+        userid: uid
+      });
+}
+
 const getUser = function(uid){
     return database.ref("users/"+uid).once('value').then((snapshot)=>{ return snapshot.val() })
 }
@@ -61,4 +68,4 @@ const login = function(){
 //     ]
 //   };
 
-export default { createVideo, createUser, auth, login, getUser, getVideo, getVideos, getUsers }
+export default { createVideo, createUser, auth, login, getUser, getVideo, getVideos, createMapping}
