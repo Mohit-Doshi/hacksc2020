@@ -30,8 +30,8 @@ navigator.geolocation.getCurrentPosition(success, error, {maximumAge:60000, time
 const UpChunk = require('@mux/upchunk');
 const filePicker = document.getElementById('file-picker');
 var uid = localStorage.getItem("userid")
-var caption = document.getElementById("caption").value;
 function myFunc() {
+    var caption = document.getElementById("caption").value;
     const file = filePicker.files[0];
     console.log('I am here');
     muxWrapper.getUploadLink().then(data => {
@@ -52,6 +52,7 @@ function myFunc() {
                 muxWrapper.getAccessInfo(asset_id).then(assetdata => {
                     console.log(assetdata);
                     var playback_id = assetdata['data']['playback_ids'][0]['id'];
+                    console.log("hello")
                     firebaseWrapper.createVideo(asset_id,playback_id,caption,location, uid);
                     firebaseWrapper.createMapping(uid, asset_id);
                 })

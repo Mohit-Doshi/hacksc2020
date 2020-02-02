@@ -12,9 +12,9 @@ export default class VidUploader extends Component {
                 <img src={UploadToCloud} id="cloudicon"/>
             </div>
             <div className={style.fieldsDiv}>
-                <input id="file-picker" type="file"/>
+                {/* <input id="file-picker" type="file"/>
                 <input id="caption" type="text" placeholder="Enter caption" required/>
-                <button type="button" id='upload'>Upload</button>
+                <button type="button" id='upload'>Upload</button> */}
             </div>
         </div>
     );
