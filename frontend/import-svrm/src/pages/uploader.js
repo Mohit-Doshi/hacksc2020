@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import Menu from 'components/Menu';
 import muxWrapper from '../muxWrapper'
 import firebaseWrapper from '../firebaseWrapper'
+import VidUploader from '../components/VidUploader'
 
 ReactDOM.render(<Menu />, document.getElementById('menu'));
+ReactDOM.render(<VidUploader />, document.getElementById('user-video-uploader'));
 
 var options = {
     enableHighAccuracy: true,
