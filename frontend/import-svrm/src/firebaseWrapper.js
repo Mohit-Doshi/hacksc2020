@@ -44,6 +44,10 @@ const getVideos = function(){
     return database.ref("videos").once('value').then((snapshot) => { return snapshot.val() })
 }
 
+const getUsers = function(){
+    return database.ref("users").once('value').then((snapshot) => { return snapshot.val() })
+}
+
 
 const login = function(){
     auth.signInAnonymously().then(user => { createUser(user) })
@@ -57,4 +61,4 @@ const login = function(){
 //     ]
 //   };
 
-export default { createVideo, createUser, auth, login, getUser, getVideo, getVideos}
+export default { createVideo, createUser, auth, login, getUser, getVideo, getVideos, getUsers }
