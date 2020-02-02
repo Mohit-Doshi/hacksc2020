@@ -28,7 +28,7 @@ var getAccessfromUpload = function (upload_link) {
             "Content-Type": "application/json"
         },
         method: "GET"
-    })
+    }).then((response) => { return response.json() })
 }
 
 
