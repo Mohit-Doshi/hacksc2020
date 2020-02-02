@@ -1,37 +1,36 @@
 import React, { Component } from 'react'
 import getVideos from '../../firebaseWrapper'
 import firebaseWrapper from '../../firebaseWrapper'
+import VideoReview from '../VideoReview'
 
 export default class ListItems extends Component {
     constructor(props){
         super(props)
-        this.state = { items: {} }
+        this.state = { videos: {} }
     }
 
     componentDidMount(){
         // console.log(firebaseWrapper.getVideos())
-        firebaseWrapper.getVideos().then(console.log)
-        firebaseWrapper.getUsers().then(v => {
+        firebaseWrapper.getVideos().then(v => {
         //     console.log("hello")
         //     console.log(v)
-            this.setState({items: v})
+            this.setState({videos: v})
         })
-        // this.setState({items: getVideos()})
+        // this.setState({videos: getVideos()})
     }
 
     render() {
-        console.log(this.state.items)
-        // str = ''
-        // for (const key in this.state.items) {
-        //     if (this.state.items.hasOwnProperty(key)) {
-        //         const element = this.state.items[key];
-        //         str = str + '<p>'+ element.uid+ '</p>' 
+        console.log(this.state.videos)
+        var elements = []
+        for (const key in this.state.videos) {
+            if (this.state.videos.hasOwnProperty(key) && this.state.videos[key]['display']) {
+                elements.push(<VideoReview key={key} id={key} playbackId={this.state.videos[key]['videoPlaybackId']}></VideoReview>)
                 
-        //     }
-        // }
+            }
+        }
         return (
             <div>
-                <p>There are {Object.keys(this.state.items)} videos</p>
+                {elements}
             </div>
         )
     }
