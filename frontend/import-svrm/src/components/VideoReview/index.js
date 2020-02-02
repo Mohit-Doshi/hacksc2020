@@ -31,10 +31,10 @@ export default class VideoReview extends Component {
 
     render() {
         return (
-            <div>
-                <video id={this.props.id} controls></video>
-                <button id="upvote" onClick={this.upvote}>Upvote</button>
-                <button id="downvote" onClick={this.downvote}>Downvote</button>
+            <div style={{display: "inline-block", width: "100%", textAlign: "center"}}>
+                <button style={{marginBottom: "40px", marginRight: "100px"}} id="downvote" onClick={this.downvote}>Downvote</button>
+                <video style={{border: "10px", borderColor: "black"}} id={this.props.id} controls width="600" height="400"></video>
+                <button style={{marginBottom: "40px", marginLeft: "100px"}} id="upvote" onClick={this.upvote}>Upvote</button>
             </div>
         )
     }

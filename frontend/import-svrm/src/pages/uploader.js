@@ -45,6 +45,7 @@ function myFunc() {
         });
         upload.on('success', () => {
             console.log('We did it, everyone!');
+            alert("Uploaded!\nThank you for helping saving the planet");
             setTimeout(() => {
             muxWrapper.getAccessfromUpload(upload_id).then(uploaddata => {
                 // console.log(uploaddata);

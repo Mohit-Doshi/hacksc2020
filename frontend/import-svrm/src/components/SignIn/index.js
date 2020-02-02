@@ -71,3 +71,16 @@ export default class SignIn extends Component {
         }
     }
 }
+
+<div id="login">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" />
+      <form name='form-login'>
+        <span class="fontawesome-user"></span>
+          <input type="name" id="usersname" placeholder="Enter your Name" required />
+       
+        <span class="fontawesome-lock"></span>
+          <input type="password" id="userspword" placeholder="Enter your Password" required />
+          <br />
+          <input type="submit" />
+        </form>
+</div>

@@ -11,5 +11,185 @@
  }
 
  .currentUser {
-     padding-bottom: 15px;
+     font-size: 300%;
+     color: yellowgreen;
  }
+
+
+
+
+
+
+
+
+
+
+.socialIcons {
+	padding: 0px 25px 0px 25px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -60px;
+}
+
+.socialIcons a {
+    display: inline-block;
+}
+
+.socialIcons img {
+    width: 50px;
+    padding: 10px;
+}
+
+/* Wrapper */
+.icon-button {
+	background-color: white;
+	border-radius: 2.6rem;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.3rem;
+	height: 2.6rem;
+	line-height: 2.6rem;
+	margin: 0 5px;
+	position: relative;
+	text-align: center;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	width: 2.6rem;
+}
+
+/* Circle */
+.icon-button span {
+	border-radius: 0;
+	display: block;
+	height: 0;
+	left: 50%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 0;
+}
+.icon-button:hover span {
+	width: 2.6rem;
+	height: 2.6rem;
+	border-radius: 2.6rem;
+	margin: -1.3rem;
+}
+
+/* Icons */
+.icon-button i {
+	background: none;
+	color: white;
+	height: 2.6rem;
+	left: 0;
+	line-height: 2.6rem;
+	position: absolute;
+	top: 0;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 2.6rem;
+	z-index: 10;
+}
+
+
+
+
+
+.twitter span {
+	background-color: #4099ff;
+}
+.facebook span {
+	background-color: #3B5998;
+}
+.googleplus span {
+	background-color: #db5a3c;
+}
+.tumblr span {
+	background-color: #34526f;
+}
+.instagram span {
+	background-color: #517fa4;
+}
+.youtube span {
+	background-color: #bb0000;
+}
+.pinterest span {
+	background-color: #cb2027;
+}
+
+
+
+.iconbutton .icontwitter {
+	color: #4099ff;
+}
+.iconbutton .iconfacebook {
+	color: #3B5998;
+}
+.iconbutton .fatumblr {
+	color: #34526f;
+}
+.iconbutton .icongoogleplus {
+	color: #db5a3c;
+}
+.iconbutton .fainstagram {
+	color: #517fa4;
+}
+.iconbutton .fayoutube {
+	color: #bb0000;
+}
+.iconbutton .fapinterest {
+	color: #cb2027;
+}
+
+
+
+
+.iconbutton:hover .icontwitter,
+.iconbutton:hover .iconfacebook,
+.iconbutton:hover .icongoogleplus,
+.iconbutton:hover .fatumblr,
+.iconbutton:hover .fainstagram,
+.iconbutton:hover .fayoutube,
+.iconbutton:hover .fapinterest {
+	color: white;
+}
+
+@media all and (max-width: 680px) {
+  .iconbutton {
+    border-radius: 1.6rem;
+    font-size: 0.8rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    width: 1.6rem;
+  }
+
+  .iconbutton:hover span {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 1.6rem;
+    margin: -0.8rem;
+  }
+
+  /* Icons */
+  .iconbutton i {
+	  height: 1.6rem;
+	  line-height: 1.6rem;
+	  width: 1.6rem;
+  }
+  body {
+
+	  padding: 10px;
+  }
+  .pinterest {
+   display: none; 
+  }
+
+}

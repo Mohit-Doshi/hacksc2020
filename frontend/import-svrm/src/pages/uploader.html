@@ -3,13 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>Upload Page</title>
+    <style>
+        #caption, #file-picker, #upload {
+            margin-left: 300px;
+        }
+    </style>
 </head>
 <body>
     <div id="menu"></div>
     <div id="user-video-uploader"></div>
     <!-- <p>Upload something here </p> -->
     <input id="file-picker" type="file" />
-    <input id="caption" type="text" placeholder="Enter caption"/>
+    <input id="caption" type="text" placeholder="Enter caption" required/>
     <button type="button" id='upload'>Upload</button>
 </body>
 </html>

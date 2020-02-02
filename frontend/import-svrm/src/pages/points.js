@@ -6,5 +6,5 @@ import firebaseWrapper from '../firebaseWrapper';
 
 ReactDOM.render(<Menu />, document.getElementById('menu'));
 firebaseWrapper.getUser(localStorage.getItem("userid")).then((userid) => {
-    ReactDOM.render(<PointsCard pnts={userid ? userid.points : 99} />, document.getElementById('card'));
+    ReactDOM.render(<PointsCard pnts={userid ? userid.points : 0} />, document.getElementById('card'));
 })

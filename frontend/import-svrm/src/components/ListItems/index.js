@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import getVideos from '../../firebaseWrapper'
 import firebaseWrapper from '../../firebaseWrapper'
 import VideoReview from '../VideoReview'
+import style from './index.css'
 
 export default class ListItems extends Component {
     constructor(props){
@@ -29,7 +30,7 @@ export default class ListItems extends Component {
             }
         }
         return (
-            <div>
+            <div className={style.vidlist}>
                 {elements}
             </div>
         )
