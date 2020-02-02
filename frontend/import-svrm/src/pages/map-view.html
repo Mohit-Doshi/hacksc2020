@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Review Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,
+        body,
+        #map-canvas {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+        ​
+        .firstheading {
+            text-align: center;
+            color: cornflowerblue;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 25px
+        }
+        ​
+        .upvote_button {
+            font-size: 16px;
+            font-family: lucida grande, tahoma, verdana, arial, sans-serif;
+            float: left;
+            border-radius: 5px;
+        }
+        ​
+        .downvote_button {
+            font-size: 16px;
+            font-family: lucida grande, tahoma, verdana, arial, sans-serif;
+            float: right;
+            border-radius: 5px;
+        }
+        ​
+        .fa.fa-thumbs-up.upvote {
+            font-size: 16px;
+            color: green
+        }
+        ​
+        .fa.fa-thumbs-up.downvote {
+            font-size: 16px;
+            color: red
+        }
+        ​
+        .video_iframe {
+            width: 512px;
+            height: 256px;
+            border-radius: 10px
+        }
+    </style>
+    <script>
+        function updateVotes(clicked_asset_id, clicked_class) {
+            if(clicked_class == 'upvote_button'){
+                console.log("You clicked upvote!");
+                console.log(clicked_class);
+                console.log(clicked_asset_id);
+            }
+            else{
+                console.log("You clicked downvote!");
+                console.log(clicked_class);
+                console.log(clicked_asset_id);
+            }
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+</head>
+
+
+<body>
+    <div id="menu"></div>
+    <div id="map-canvas"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdDL7_AJnw4ubgyNDrygwQSTEqngeQHUo"></script>
+</body>
+</html>

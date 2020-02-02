@@ -14,6 +14,7 @@ export default class Menu extends Component {
             <li><a href="/reviewer.html">Reviewer</a></li>
             <li><a href="/transpocredit.html">Transportation Credit</a></li>
             <li><a href="/points.html">Points</a></li>
+            <li><a href="/map-view.html">Map view</a></li>
           </ul>
         </nav>
         <br /> 

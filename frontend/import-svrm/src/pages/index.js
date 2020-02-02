@@ -16,6 +16,7 @@ ReactDOM.render(
         <div style={{ float: "left", padding: "10px 20px 0 0" }}><a style={{textDecoration: "none", color: "black"}} href="/uploader.html"><LandingCard cardName="Upload Video" imgsrc={UploadIcon}/></a></div>
         <div style={{ float: "left", padding: "10px 20px 0 0" }}><a style={{textDecoration: "none", color: "black"}} href="/reviewer.html"><LandingCard cardName="Review Videos" imgsrc={ReviewIcon}/></a></div>
         <div style={{ float: "left", padding: "10px 20px 0 0" }}><a style={{textDecoration: "none", color: "black"}} href="/transpocredit.html"><LandingCard cardName="Upload Maps Data" imgsrc={TransportationIcon}/></a></div>
+        <div style={{ float: "left", padding: "10px 20px 0 0" }}><a style={{textDecoration: "none", color: "black"}} href="/map-view.html"><LandingCard cardName="Review Videos in maps" imgsrc={ReviewIcon}/></a></div>
     </div>, document.getElementById('menu')
 );
 
