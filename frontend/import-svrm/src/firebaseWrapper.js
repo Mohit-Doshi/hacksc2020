@@ -91,6 +91,9 @@ const upvote = function (videoAssetId, userId) {
                 console.warn("You can vote once")
             }
         }
+        if(data['upvotes'] >= 2 + data['downvotes']){
+            data['display'] = false
+        }
         return data
     }).then(data => {
         return updateVideo(videoAssetId, data)
@@ -100,6 +103,7 @@ const upvote = function (videoAssetId, userId) {
 const downvote = function (videoAssetId, userId) {
     return getVideo(videoAssetId).then(data => {
         console.log(videoAssetId, data)
+
         if (!data.hasOwnProperty('reviewers')){
             data['reviewers'] = [userId]
             data['downvotes'] = data['downvotes'] + 1
@@ -114,6 +118,9 @@ const downvote = function (videoAssetId, userId) {
             } else {
                 console.warn("You can vote once")
             }
+        }
+        if(data['upvotes'] + 2 <= data['downvotes']){
+            data['display'] = false
         }
         return data
     }).then(data => {
