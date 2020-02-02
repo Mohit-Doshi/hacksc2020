@@ -6,11 +6,6 @@ import firebaseWrapper from '../firebaseWrapper'
 
 ReactDOM.render(<Menu />, document.getElementById('menu'));
 
-// muxWrapper.getAccessInfo("00401k8pUJIopNaUyT5024tPhw8mEstyv5A")
-muxWrapper.getAccessInfo("00401k8pUJIopNaUyT5024tPhw8mEstyv5A").then(data => {
-    console.log(data);
-})
-
 var options = {
     enableHighAccuracy: true,
     timeout: 5000,
