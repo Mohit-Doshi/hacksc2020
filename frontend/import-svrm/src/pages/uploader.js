@@ -32,7 +32,7 @@ navigator.geolocation.getCurrentPosition(success, error, {maximumAge:60000, time
 
 const UpChunk = require('@mux/upchunk');
 const filePicker = document.getElementById('file-picker');
-var uid = localStorage.getItem("uid")
+var uid = localStorage.getItem("userid")
 function myFunc() {
     const file = filePicker.files[0];
     console.log('I am here');

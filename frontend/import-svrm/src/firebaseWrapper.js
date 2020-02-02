@@ -24,7 +24,7 @@ var createVideo = function(videoAssetId,videoPlaybackId,captions,location) {
 
 const createUser = function(uid, email){
     database.ref("users/" + uid).set({
-        uid: uid,
+        userid: uid,
         name: '',
         email: email,
         points: 0,

@@ -5,7 +5,7 @@ import firebaseWrapper from '../../firebaseWrapper';
 export default class SignIn extends Component {
     constructor(props){
         super(props);
-        this.state = {signedIn: localStorage.getItem("signedIn") == "true", uid: localStorage.getItem("uid")}
+        this.state = {signedIn: localStorage.getItem("signedIn") == "true", userid: localStorage.getItem("userid")}
         this.signIn = this.signIn.bind(this)
         this.signOut = this.signOut.bind(this)
         
@@ -16,8 +16,8 @@ export default class SignIn extends Component {
             console.log(user);
             firebaseWrapper.createUser(user.user.uid,user.user.email)
             localStorage.setItem("signedIn", "true")
-            localStorage.setItem("uid", user.user.uid)
-            this.setState({signedIn: true, uid: user.user.uid})
+            localStorage.setItem("userid", user.user.uid)
+            this.setState({signedIn: true, userid: user.user.uid})
         }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -29,9 +29,9 @@ export default class SignIn extends Component {
 
     signOut(){
         firebaseWrapper.auth.signOut().then(() => {
-            this.setState({signedIn: false, uid: null})
+            this.setState({signedIn: false, userid: null})
             localStorage.setItem("signedIn", "false")
-            localStorage.removeItem("uid")
+            localStorage.removeItem("userid")
             window.signedIn = false
         })
     }
