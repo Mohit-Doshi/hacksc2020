@@ -80,7 +80,12 @@ export default class SignIn extends Component {
        
         <span class="fontawesome-lock"></span>
           <input type="password" id="userspword" placeholder="Enter your Password" required />
-          <br />
+          <a></a>
+          <a></a>
+          <a></a>
+          <a></a>
+          <br/>
+          <br/>
           <input type="submit" />
         </form>
 </div>

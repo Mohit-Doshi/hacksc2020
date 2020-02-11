@@ -6,3 +6,7 @@ button {
     text-align: center;
 }
 
+#form-login {
+    display: block;
+}
+

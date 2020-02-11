@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import firebaseWrapper from '../../firebaseWrapper';
+import UpVote from '../../assets/images/upvote.png'
+import DownVote from '../../assets/images/downvote.png'
 
 
 export default class VideoReview extends Component {
@@ -32,9 +34,10 @@ export default class VideoReview extends Component {
     render() {
         return (
             <div style={{display: "inline-block", width: "100%", textAlign: "center"}}>
-                <button style={{marginBottom: "40px", marginRight: "100px"}} id="downvote" onClick={this.downvote}>Downvote</button>
+                <button style={{marginBottom: "40px", marginLeft: "100px"}} id="upvote" onClick={this.upvote}><img src={UpVote} style={{ width: "40px" }} /></button>
                 <video style={{border: "10px", borderColor: "black"}} id={this.props.id} controls width="600" height="400"></video>
-                <button style={{marginBottom: "40px", marginLeft: "100px"}} id="upvote" onClick={this.upvote}>Upvote</button>
+                <button style={{marginBottom: "40px", marginRight: "100px"}} id="downvote" onClick={this.downvote}><img src={DownVote} style={{ width: "40px" }}/></button>
+
             </div>
         )
     }

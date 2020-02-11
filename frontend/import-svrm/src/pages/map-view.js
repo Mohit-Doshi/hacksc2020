@@ -102,7 +102,7 @@ function initialize() {
                         '<div class="bodyContent">' +
                         '<iframe class="video_iframe" src="https://stream.mux.com/' + marker.get('class') + '.m3u8 " frameborder="0"></iframe><br><br>' +
                         '<button class="upvote_button" onclick="updateVotes(\'' + marker.get('id') + '\', \'upvote_button\')">Upvotes ' + marker.get('upvotes') + ' <i class="fa fa-thumbs-up upvote"></i></button>' +
-                        '<button class="downvote_button" onclick="updateVotes(\'' + marker.get('id') + '\', \'downvote_button\')">Downvotes ' + marker.get('downvotes') + ' <i class="fa fa-thumbs-up downvote"></i></button>' +
+                        '<button class="downvote_button" onclick="updateVotes(\'' + marker.get('id') + '\', \'downvote_button\')">Downvotes ' + marker.get('downvotes') + ' <i class="fa fa-thumbs-down downvote"></i></button>' +
                         '</div>' +
                         '</div>';
                     
